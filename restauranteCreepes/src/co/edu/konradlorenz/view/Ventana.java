@@ -57,12 +57,12 @@ public class Ventana {
             System.out.println(i + ". " + plato.toString());
         }
         System.out.print("Seleccione el número del plato: ");
-        int index = leer.nextInt();
+        int numPlato = leer.nextInt();
         System.out.print("Ingrese la cantidad: ");
         int cantidad = leer.nextInt();
         leer.nextLine(); 
 
-        Plato platoSeleccionado = platosDisponibles.get(index);
+        Plato platoSeleccionado = platosDisponibles.get(numPlato);
 
         for (int i = 0; i < cantidad; i++) {
             System.out.println("Para el plato #" + (i + 1) + " (" + platoSeleccionado.getNombrePlato() + "), ¿desea adiciones? (sí/no) (2,000 por adición): ");
