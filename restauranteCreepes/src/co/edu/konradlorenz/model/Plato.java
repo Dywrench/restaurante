@@ -62,6 +62,21 @@ public class Plato {
 
     @Override
     public String toString() {
-        return "Plato: " + nombrePlato + ", Bebida: " + bebida + ", Adiciones: " + adiciones + ", Precio: $" + getPrecioConAdiciones();
+        StringBuilder sb = new StringBuilder();
+        sb.append("Plato: ").append(nombrePlato)
+          .append(", Bebida: ").append(bebida)
+          .append(", Precio: $").append(getPrecioConAdiciones());
+
+        if (!adiciones.isEmpty()) {
+            sb.append(", con: ");
+            for (int i = 0; i < adiciones.size(); i++) {
+                sb.append(adiciones.get(i));
+                if (i < adiciones.size() - 1) {
+                    sb.append(", ");
+                }
+            }
+        }
+
+        return sb.toString();
     }
 }

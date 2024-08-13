@@ -24,10 +24,14 @@ public class Mesero {
 
     public void agregarPlato(Plato plato, int cantidad) {
         for (int i = 0; i < cantidad; i++) {
-            platosSeleccionados.add(plato);
-            cantidades.add(1); 
+            Plato nuevoPlato = new Plato(plato.getNombrePlato(), plato.getBebida(), new ArrayList<>(plato.getAdiciones()), plato.getPrecio());
+            platosSeleccionados.add(nuevoPlato);
+            cantidades.add(1);
         }
     }
+        
+        
+    
 
     public void mostrarFactura() {
         int total = 0;
